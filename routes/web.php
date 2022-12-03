@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CompaniesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+// Dashboard
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Company route
+Route::resource('companies', CompaniesController::class);
