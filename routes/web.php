@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +30,7 @@ Route::resource('employees', EmployeesController::class);
 Route::post('/getCompanies', [EmployeesController::class, 'getCompanies'])->name('getCompanies');
 //export pdf
 Route::get('/export-employees', [EmployeesController::class, 'export'])->name('employees.export');
+// route users
+Route::resource('users', UsersController::class);
+// import excell
+Route::post('/import-excels', [UsersController::class, 'import'])->name('users.import');
