@@ -39,13 +39,16 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('companies') }}">Companies</a>
+                            <a class="nav-link {{ Request::is('companies') ? 'active' : '' }}"
+                                href="{{ url('companies') }}">Companies</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('employees') }}">Employees</a>
+                            <a class="nav-link {{ Request::is('employees') ? 'active' : '' }}"
+                                href="{{ url('employees') }}">Employees</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('users') }}">Import User</a>
+                            <a class="nav-link {{ Request::is('users') ? 'active' : '' }}"
+                                href="{{ url('users') }}">Import User</a>
                         </li>
                     </ul>
 
