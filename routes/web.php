@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\EmployeesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +23,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Company route
 Route::resource('companies', CompaniesController::class);
+// Employee route
+Route::resource('employees', EmployeesController::class);
+// load dataajax company on employee
+Route::post('/getCompanies', [EmployeesController::class, 'getCompanies'])->name('getCompanies');
+//export pdf
+Route::get('/export-employees', [EmployeesController::class, 'export'])->name('employees.export');
